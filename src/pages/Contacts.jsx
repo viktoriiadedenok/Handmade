@@ -3,7 +3,6 @@ import React from "react";
 const Contacts = () => {
   return (
     <div>
-      Here are contacts
       <div class="site-section pb-0 site-portfolio">
         <div class="container">
           <div class="row mb-5 align-items-end">
@@ -115,35 +114,6 @@ const Contacts = () => {
           </div>
         </div>
       </div>
-      <footer class="footer mt-5 pt-5" role="contentinfo">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6">
-              <p class="mb-1">
-                &copy; Copyright MyPortfolio. All Rights Reserved
-              </p>
-              <div class="credits">
-                Designed by{" "}
-                <a href="https://bootstrapmade.com/">BootstrapMade</a>
-              </div>
-            </div>
-            <div class="col-sm-6 social text-md-right">
-              <a href="foo">
-                <span class="icofont-twitter"></span>
-              </a>
-              <a href="foo">
-                <span class="icofont-facebook"></span>
-              </a>
-              <a href="foo">
-                <span class="icofont-dribbble"></span>
-              </a>
-              <a href="foo">
-                <span class="icofont-behance"></span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
