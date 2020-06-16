@@ -4,7 +4,7 @@ import { ProductList } from "./products-list";
 import "./ProductPage.css";
 
 const ProductPage = () => {
-  const moreWorksList = ProductList;
+  // const moreWorksList = ProductList;
   const { id } = useParams();
 
   let product;
@@ -24,8 +24,8 @@ const ProductPage = () => {
         <div class="container">
           <div class="row mb-4 align-items-center">
             <div class="col-md-6" data-aos="fade-up">
-              <h2>Work Single Page</h2>
-              <p>Lorem ipsum .</p>
+              <h2>Product name</h2>
+              <p>Short description</p>
             </div>
           </div>
         </div>
@@ -46,18 +46,20 @@ const ProductPage = () => {
               >
                 <div class="sticky-content">
                   <h3 class="h3">{product.title}</h3>
-                  <p class="mb-4">
-                    <span class="text-muted">Design</span>
-                  </p>
 
                   <div class="mb-5">
                     <p>{product.bodyText}</p>
+                    <h5>{product.price}</h5>
                   </div>
+                  <button type="button" class="btn btn-danger">
+                    Buy now
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <div class="site-section pb-0">
           <div class="container">
             <div class="row justify-content-center text-center mb-4">
