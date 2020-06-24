@@ -2,12 +2,12 @@ import React from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { ProductList } from "./products-list";
 import "./ProductPage.css";
+import { conditionalExpression } from "@babel/types";
 
 const ProductPage = () => {
-  // const moreWorksList = ProductList;
   const { id } = useParams();
-
   let product;
+
   for (let i = 0; i < ProductList.length; i++) {
     if (ProductList[i].id === +id) {
       product = ProductList[i];
@@ -16,6 +16,16 @@ const ProductPage = () => {
 
   const goTop = () => {
     window.scrollTo(0, 0);
+  };
+
+  let basketSet = () => {
+    let storageList;
+    let getItem;
+    getItem = localStorage.getItem("idList");
+    storageList = (getItem && getItem.split(",")) || [];
+    storageList.push(String(product.id));
+    console.log(storageList);
+    localStorage.setItem("idList", storageList);
   };
 
   return (
@@ -51,7 +61,11 @@ const ProductPage = () => {
                     <p>{product.bodyText}</p>
                     <h5>{product.price}</h5>
                   </div>
-                  <button type="button" class="btn btn-danger">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    onClick={basketSet}
+                  >
                     Buy now
                   </button>
                 </div>
