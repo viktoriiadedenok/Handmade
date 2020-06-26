@@ -60,13 +60,15 @@ const ProductPage = () => {
                     <p>{product.bodyText}</p>
                     <h5>{product.price}</h5>
                   </div>
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    onClick={basketSet}
-                  >
-                    Buy now
-                  </button>
+                  <NavLink to="/basket">
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      onClick={basketSet}
+                    >
+                      Buy now
+                    </button>
+                  </NavLink>
                 </div>
               </div>
             </div>

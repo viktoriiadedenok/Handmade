@@ -3,44 +3,74 @@ import "./Basket.css";
 import { ProductList } from "./products-list";
 import { NavLink } from "react-router-dom";
 
-const Basket = () => {
-  const productsList = ProductList;
-  let basketIdList = localStorage.getItem("idList");
-  basketIdList = (basketIdList && basketIdList.split(",")) || [];
-  let currentList = [];
-  basketIdList = basketIdList.map(item => +item);
-  currentList = productsList.filter((item, index) => {
-    if (basketIdList.includes(productsList[index].id)) {
-      return true;
-    }
-    return false;
-  });
-  // localStorage.removeItem("idList")
+class Basket extends React.Component {
+  basketIdList = localStorage.getItem("idList");
 
-  let deleteItem = () => {
-    console.log("hi");
-    currentList = [];
+  constructor(props) {
+    super(props);
+    this.basketIdList =
+      (this.basketIdList && this.basketIdList.split(",")) || [];
+
+    this.state = {
+      currentList: ProductList.filter(item => {
+        if (this.basketIdList.includes(String(item.id))) {
+          console.log(item.id);
+          return true;
+        } else return false;
+      })
+    };
+  }
+
+  deleteItem = productId => {
+    let deletedList = localStorage.getItem("idList").split(",");
+
+    deletedList = deletedList.filter(array => {
+      if (array == productId) {
+        return false;
+      } else return true;
+    });
+
+    const currentList = this.state.currentList.filter(product => {
+      if (product.id == productId) {
+        return false;
+      } else return true;
+    });
+
+    this.setState({
+      currentList: currentList
+    });
+    localStorage.setItem("idList", deletedList);
   };
 
-  return (
-    <div class="basket">
-      <div class="basket-list">
-        {currentList.map((item, key) => (
-          <div class="basket-item">
-            <NavLink to={`/product/${item.id}`} class="item-wrap fancybox">
-              <div class="work-info">
-                <h3>{item.title}</h3>
-                <span>{item.bodyText}</span>
-              </div>
-              <img alt=" " class="img-fluid" src={require(`${item.imgSrc}`)} />
-            </NavLink>
-            <button type="button" class="btn btn-danger" onClick={deleteItem}>
-              Delete
-            </button>
-          </div>
-        ))}
+  render() {
+    return (
+      <div class="basket">
+        <div class="basket-list">
+          {this.state.currentList.map((item, key) => (
+            <div class="basket-item">
+              <NavLink to={`/product/${item.id}`} class="item-wrap fancybox">
+                <div class="work-info">
+                  <h3>{item.title}</h3>
+                  <span>{item.bodyText}</span>
+                </div>
+                <img
+                  alt=" "
+                  class="img-fluid"
+                  src={require(`${item.imgSrc}`)}
+                />
+              </NavLink>
+              <button
+                type="button"
+                class="btn btn-danger"
+                onClick={() => this.deleteItem(item.id)}
+              >
+                Delete
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 export default Basket;
