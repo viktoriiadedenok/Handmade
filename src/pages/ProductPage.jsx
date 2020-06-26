@@ -24,7 +24,6 @@ const ProductPage = () => {
     getItem = localStorage.getItem("idList");
     storageList = (getItem && getItem.split(",")) || [];
     storageList.push(String(product.id));
-    console.log(storageList);
     localStorage.setItem("idList", storageList);
   };
 

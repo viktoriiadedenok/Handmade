@@ -1,16 +1,19 @@
 .basket {
-  border: solid black;
+  border: solid 1px black;
+  padding: 5px;
 }
 .basket-list {
-  border: solid black;
+  border: solid 1px black;
   padding: 10px;
 }
 .basket-item {
-  border: solid black;
+  border: solid 1px black;
   padding: 10px;
   margin: 10px 0px;
 }
 .basket-item img {
-  border: solid black;
   width: 200px;
+}
+button {
+  float: right;
 }
