@@ -12,6 +12,8 @@ import Basket from "./pages/Basket.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import MainPage from "./pages/MainPage";
 import Layout from "./components/Layout";
+import ModalWindow from "./pages/Modal";
+import Basket2 from "./pages/Basket2.jsx";
 function App() {
   return (
     <Router>
@@ -26,11 +28,17 @@ function App() {
           <Route exact path="/basket">
             <Basket />
           </Route>
+          <Route exact path="/basket2">
+            <Basket2 />
+          </Route>
           <Route exact path="/MainPage">
             <MainPage />
           </Route>
           <Route exact path="/">
             <MainPage />
+          </Route>
+          <Route exact path="/modal">
+            <ModalWindow />
           </Route>
         </Switch>
       </Layout>

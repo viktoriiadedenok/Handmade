@@ -1,19 +1,34 @@
 .basket {
-  border: solid 1px black;
-  padding: 5px;
+  background-color: #dcdcdc;
+  padding: 3px;
+  /* border-radius: 20px 20px; */
 }
 .basket-list {
-  border: solid 1px black;
+  /* border-radius: 20px 20px; */
+  background-color: #f8f5f5;
   padding: 10px;
 }
 .basket-item {
-  border: solid 1px black;
+  display: flex;
+
   padding: 10px;
   margin: 10px 0px;
 }
+
 .basket-item img {
   width: 200px;
 }
-button {
-  float: right;
+
+.NavLink {
+  flex: 1;
+}
+.work-info {
+  flex: 2;
+  margin: 0px 20px;
+}
+.price {
+  flex: 1;
+}
+.button {
+  flex: 1;
 }

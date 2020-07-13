@@ -3,7 +3,8 @@ export const ProductList = [
     id: 1,
     imgSrc: "./img/img_1.jpg",
     title: "Fruit plate",
-    bodyText: "Description",
+    bodyText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in lacus a nisi pulvinar maximus quis vitae ante. Aliquam luctus.",
     price: "000 UAH"
   },
   {
@@ -11,7 +12,8 @@ export const ProductList = [
     imgSrc: "./img/img_2.jpg",
     href: "/product-details",
     title: "Teapot",
-    bodyText: "Description",
+    bodyText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in lacus a nisi pulvinar maximus quis vitae ante. Aliquam luctus.",
     price: "000 UAH"
   },
   {
@@ -19,7 +21,8 @@ export const ProductList = [
     imgSrc: "./img/img_3.jpg",
     href: "/product-details",
     title: "Teacups",
-    bodyText: "Description",
+    bodyText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in lacus a nisi pulvinar maximus quis vitae ante. Aliquam luctus.",
     price: "000 UAH"
   },
   {
@@ -27,7 +30,8 @@ export const ProductList = [
     imgSrc: "./img/img_4.jpg",
     href: "/product-details",
     title: "Lavender set",
-    bodyText: "Description",
+    bodyText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in lacus a nisi pulvinar maximus quis vitae ante. Aliquam luctus.",
     price: "000 UAH"
   },
   {
@@ -35,7 +39,8 @@ export const ProductList = [
     imgSrc: "./img/img_5.jpg",
     href: "/product-details",
     title: "Whale plate",
-    bodyText: "Description",
+    bodyText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in lacus a nisi pulvinar maximus quis vitae ante. Aliquam luctus.",
     price: "000 UAH"
   },
   {
@@ -43,7 +48,8 @@ export const ProductList = [
     imgSrc: "./img/img_6.jpg",
     href: "/product-details",
     title: "Flower plate",
-    bodyText: "Description",
+    bodyText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in lacus a nisi pulvinar maximus quis vitae ante. Aliquam luctus.",
     price: "000 UAH"
   }
 ];
