@@ -6,13 +6,13 @@ import "./css/style.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./pages/About";
-import Contacts from "./pages/Contacts.jsx";
-import Services from "./pages/Services.jsx";
+// import Contacts from "./pages/Contacts.jsx";
+// import Services from "./pages/Services.jsx";
 import Basket from "./pages/Basket.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import MainPage from "./pages/MainPage";
 import Layout from "./components/Layout";
-import ModalWindow from "./pages/Modal";
+import BasketModal from "./pages/Modal";
 function App() {
   return (
     <Router>
@@ -34,7 +34,7 @@ function App() {
             <MainPage />
           </Route>
           <Route exact path="/modal">
-            <ModalWindow />
+            <BasketModal />
           </Route>
         </Switch>
       </Layout>

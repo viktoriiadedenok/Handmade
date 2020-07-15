@@ -1,42 +1,55 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
-import { useState } from "react";
 
-const ModalWindow = () => {
-  const [show, setShow] = useState(false);
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)"
+  }
+};
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+const afterOpenModal = () => {};
+
+const BasketModal = props => {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {}
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   return (
-    <>
-      <button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
+    <div class="form-group">
+      <button onClick={openModal} class="btn btn-outline-secondary">
+        Open Modal
       </button>
-
+      {Modal.setAppElement("body")}
       <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        contentLabel="Example Modal"
+        style={customStyles}
       >
-        <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          I will not close if you click outside me. Don't even try to press
-          escape key.
-        </Modal.Body>
-        <Modal.Footer>
-          <button variant="secondary" onClick={handleClose}>
-            Close
-          </button>
-          <button variant="primary">Understood</button>
-        </Modal.Footer>
+        <button onClick={closeModal}>close</button>
+        <div>I am a modal</div>
+        <form>
+          <input />
+
+          <button>tab navigation</button>
+        </form>
       </Modal>
-    </>
+    </div>
   );
 };
 
-export default ModalWindow;
+// render(<App />);
+export default BasketModal;

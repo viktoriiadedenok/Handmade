@@ -2,7 +2,7 @@ import React from "react";
 import "./Basket.css";
 import { ProductList } from "./products-list";
 import { NavLink } from "react-router-dom";
-import Modal from "react-modal";
+import BasketModal from "./Modal.jsx";
 
 class Basket extends React.Component {
   basketIdList = localStorage.getItem("idList");
@@ -13,7 +13,7 @@ class Basket extends React.Component {
       (this.basketIdList && this.basketIdList.split(",")) || [];
 
     this.state = {
-      modalIsOpen: false,
+      // modalIsOpen: false,
       currentList: ProductList.filter(item => {
         if (this.basketIdList.includes(String(item.id))) {
           console.log(item.id);
@@ -44,6 +44,8 @@ class Basket extends React.Component {
     localStorage.setItem("idList", deletedList);
   };
 
+  // MODAL
+
   render() {
     return (
       <div class="px-4 px-lg-0">
@@ -73,12 +75,15 @@ class Basket extends React.Component {
                       <tr>
                         <th scope="row" className="border-0">
                           <div className="p-2">
-                            <img
-                              src={require(`${item.imgSrc}`)}
-                              alt=""
-                              width="70"
-                              className="img-fluid rounded shadow-sm"
-                            />
+                            <NavLink to={`/product/${item.id}`}>
+                              {" "}
+                              <img
+                                src={require(`${item.imgSrc}`)}
+                                alt=""
+                                width="70"
+                                className="img-fluid rounded shadow-sm"
+                              />
+                            </NavLink>
                             <div className="ml-3 d-inline-block align-middle">
                               <h5 className="mb-0">
                                 {" "}
@@ -122,9 +127,10 @@ class Basket extends React.Component {
                       <button type="button" class="btn btn-outline-secondary">
                         Back to shopping
                       </button>{" "}
-                      <button type="button" class="btn btn-outline-secondary">
-                        Proceed shopping
-                      </button>
+                    </div>
+                    <br />
+                    <div>
+                      <BasketModal></BasketModal>
                     </div>
                   </table>
                 </div>
